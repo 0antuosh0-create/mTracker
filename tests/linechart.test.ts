@@ -48,7 +48,7 @@ describe('lineChartHTML reference lines', () => {
 
   it('labels most days on a two-week chart', () => {
     const html = lineChartHTML(days(14), series, {}, s);
-    const xLabels = html.match(/y="182"/g) ?? [];
+    const xLabels = html.match(/class="lc-xlab"/g) ?? [];
     expect(xLabels.length).toBeGreaterThanOrEqual(6);
   });
 });

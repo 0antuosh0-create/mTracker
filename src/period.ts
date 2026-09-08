@@ -6,6 +6,7 @@ import { faNum } from './settings';
 import type { Repo } from './storage';
 import type { PeriodState } from './ui/state';
 
+
 export interface ResolvedPeriod {
   startIso: string;
   endIso: string;

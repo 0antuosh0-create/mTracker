@@ -1,5 +1,4 @@
 /* App state — single source of truth for active tab / period / chart. */
-
 export interface PeriodState {
   kind: 'month' | 'rolling' | 'custom';
   monthStart: string | null;
@@ -7,9 +6,7 @@ export interface PeriodState {
   from: string | null;
   to: string | null;
 }
-
 export type TabId = 'today' | 'daily' | 'report' | 'tasks' | 'data';
-
 export const state = {
   tab: 'today' as TabId,
   period: {
@@ -20,7 +17,8 @@ export const state = {
     to: null
   } as PeriodState,
   chartType: 'bar' as 'bar' | 'line',
-  day: null as string | null
+  day: null as string | null,
+  calMonth: null as string | null
 };
 export const TABS: readonly TabId[] = ['today', 'daily', 'report', 'tasks', 'data'];
 export function parseTabId(v: string | null): TabId {
